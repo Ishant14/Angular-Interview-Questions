@@ -1,19 +1,32 @@
-* What is the minimum definition of a component?
+### What is the minimum definition of a component?
 
-* What is the difference between a component and a directive?
+Components are the fundamental building block of Angular applications.
+
+Components are composable, we can build larger Components from smaller ones.
+
+An Angular application is therefore just a tree of such Components, when each Component renders, it recursively renders its children Components.
+
+At the root of that tree is the top level Component, the root Component.
+
+When we bootstrap an Angular application we are telling the browser to render that top level root Component which renders it’s child Components and so on.
+
+### What is the difference between a component and a directive?
 
     Component will have the template but directive wont. 
-* How do components communicate with each other?
+
+### How do components communicate with each other?
 
     1)Using @Input, @Output and EventEmitter
     
     2)Using Services and injecting them
-* How do you create two way data binding in Angular?
+
+### How do you create two way data binding in Angular?
     1) By using both Property binding and Event Binding both together at a time.
     2) By using [(ngModel)]     
-* How would you create a component to display error messages throughout your application?
 
-* What does a lean component mean to you?
+### How would you create a component to display error messages throughout your application?
+
+### What does a lean component mean to you?
 
 Components don't fetch data from the server, validate user input, or log directly to the console. They delegate such tasks to services.
 A component's job is to enable the user experience and nothing more. 
