@@ -1,27 +1,53 @@
-* What is the purpose of NgModule?
+### What is the purpose of NgModule?
   
-  NgModule helps us to organize our components, directives and services into a logical unit, each focused on a feature.
+NgModule helps us to organize our components, directives and services into a logical unit, each focused on a feature.
   
-  For example, we have 5 components in your project and that each component is dependent on other component or services or pipes then we   need to import them into the respective component. And, then repeat the same process for all other components. This will become         cumbersome to keep including on each of these components. This is where NgModules recuse us by importing everything to @NgModule which   will be available throughout the components under one module. 
+For example, we have 5 components in your project and that each component is dependent on other component or services or pipes then we   need to import them into the respective component. And, then repeat the same process for all other components. This will become         cumbersome to keep including on each of these components. This is where NgModules recuse us by importing everything to @NgModule which   will be available throughout the components under one module. 
   
-* How do you decide to create a new NgModule?
+### How do you decide to create a new NgModule?
   
-  When we are dealing with medium or large apps, it includes discrete set of functionality. Administration, Dashboard, Bookings/Orders,   Promotions are all examples of areas of our apps that, when linked together, make our app. We basically breakdown our app into smaller   pieces called Features / Modules. 
+When we are dealing with medium or large apps, it includes discrete set of functionality. Administration, Dashboard, Bookings/Orders,   Promotions are all examples of areas of our apps that, when linked together, make our app. We basically breakdown our app into smaller   pieces called Features / Modules. 
   
-  In the process of developing an app we might create a feature which we don't want to expose or create a feature which we want to lazy   loading when the user decides it is time to revisit the feature. NgModules helps us to separate our features to logical units and load   it when required.
+In the process of developing an app we might create a feature which we don't want to expose or create a feature which we want to lazy   loading when the user decides it is time to revisit the feature. NgModules helps us to separate our features to logical units and load   it when required.
  
-* What are the attributes that you can define in an NgModule annotation?
-* What is the difference between a module's forRoot() and forChild() methods and why do you need it?
-* What would you have in a shared module?
-* What would you not put shared module?
-* What module would you put a singleton service whose instance will be shared throughout the application (e.g. ExceptionService andLoggerService)?
-* What is the purpose of exports in a NgModule?
+### What are the attributes that you can define in an NgModule annotation?
 
-* Why is it bad if SharedModule provides a service to a lazy loaded module?
+A module is a class with the @NgModule decorator. To create a module we add @NgModule passing some parameters:
+bootstrap : The component that will be the root of your application. This configuration is only present on
+your root module
+declarations : Resources the module declares. When you add a new component you have to update the
+declarations ( ng generate component does it automatically)
+exports : Resources the module exports that can be used in other modules
+imports : Resources the module uses from other modules (only module classes are accepted)
+providers : Resources that can be injected (di) in a component
 
-  This question arose in the Angular Module chapter when we discussed the importance of keeping providers out of the SharedModule.
+```typescript
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+@NgModule({
+bootstrap: [AppComponent]
+declarations: [AppComponent],
+exports: [],
+imports: [BrowserModule],
+providers: [],
+})
+export class AppModule { }
 
-  Suppose we had listed the UserService in the module's providers (which we did not). Suppose every module imports this SharedModule (which they all do).
+```
+
+
+### What is the difference between a module's forRoot() and forChild() methods and why do you need it?
+### What would you have in a shared module?
+### What would you not put shared module?
+### What module would you put a singleton service whose instance will be shared throughout the application (e.g. ExceptionService andLoggerService)?
+### What is the purpose of exports in a NgModule?
+
+### Why is it bad if SharedModule provides a service to a lazy loaded module?
+
+This question arose in the Angular Module chapter when we discussed the importance of keeping providers out of the SharedModule.
+
+Suppose we had listed the UserService in the module's providers (which we did not). Suppose every module imports this SharedModule (which they all do).
 
   When the app starts, Angular eagerly loads the AppModule and the ContactModule.
 
