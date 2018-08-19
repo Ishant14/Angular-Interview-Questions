@@ -98,7 +98,30 @@ A developer is perfectly able to use Angular to build applications without being
 
 #### Forms Questions:
 
-* When do you use template driven vs model driven forms? Why?
+- **When do you use template driven vs model driven forms? Why?**
+
+- *Template Driven Forms Features:*
+
+- Easy to use
+- Suitable for simple scenarios and fails for complex scenarios
+- Similar to AngularJS
+- Two way data binding(using [(NgModel)] syntax)
+- Minimal component code
+- Automatic track of the form and its data(handled by Angular)
+- Unit testing is another challenge
+
+- *Reactive Forms Features:*
+
+- More flexible, but needs a lot of practice
+- Handles any complex scenarios
+- No data binding is done (immutable data model preferred by most developers)
+- More component code and less HTML markup
+- Reactive transformations can be made possible such as
+- Handling a event based on a debounce time
+- Handling events when the components are distinct until changed
+- Adding elements dynamically
+- Easier unit testing
+
 * How do you submit a form?
 * What's the difference between `NgForm`, `FormGroup`, and `FormControl`? How do they work together?
 * What's the advantage of using `FormBuilder`?
