@@ -96,11 +96,11 @@ A developer is perfectly able to use Angular to build applications without being
 * Tell me about the different ways how you would get data to your components from a service and talk about why would you use one way vs the other?
 * How would you use cached data?
 
-#### Forms Questions:
+## Forms Questions:
 
-- **When do you use template driven vs model driven forms? Why?**
+### When do you use template driven vs model driven forms? Why?**
 
-- *Template Driven Forms Features:*
+**Template Driven Forms Features:**
 
 - Easy to use
 - Suitable for simple scenarios and fails for complex scenarios
@@ -110,7 +110,7 @@ A developer is perfectly able to use Angular to build applications without being
 - Automatic track of the form and its data(handled by Angular)
 - Unit testing is another challenge
 
-- *Reactive Forms Features:*
+**Reactive Forms Features:**
 
 - More flexible, but needs a lot of practice
 - Handles any complex scenarios
